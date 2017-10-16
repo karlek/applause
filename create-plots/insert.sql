@@ -1,0 +1,27 @@
+BEGIN TRANSACTION;
+.read data/anforande-199394.sql
+.read data/anforande-199495.sql
+.read data/anforande-199596.sql
+.read data/anforande-199697.sql
+.read data/anforande-199798.sql
+.read data/anforande-199899.sql
+.read data/anforande-200001.sql
+.read data/anforande-200102.sql
+.read data/anforande-200203.sql
+.read data/anforande-200304.sql
+.read data/anforande-200405.sql
+.read data/anforande-200506.sql
+.read data/anforande-200607.sql
+.read data/anforande-200708.sql
+.read data/anforande-200809.sql
+.read data/anforande-200910.sql
+.read data/anforande-201011.sql
+.read data/anforande-201112.sql
+.read data/anforande-201213.sql
+.read data/anforande-201314.sql
+.read data/anforande-201415.sql
+.read data/anforande-201516.sql
+.read data/anforande-201617.sql
+.read data/anforande-19992000.sql
+END TRANSACTION;
+

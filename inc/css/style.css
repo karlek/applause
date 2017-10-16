@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'swedensans';
+    src: url('swedensans-webfont.eot');
+    src: url('swedensans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('swedensans-webfont.woff2') format('woff2'),
+         url('swedensans-webfont.woff') format('woff'),
+         url('swedensans-webfont.ttf') format('truetype'),
+         url('swedensans-webfont.svg#sweden_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'swedensans', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 180%;
+}
+
+#splash {
+    /* background: rgb(244, 90, 98); */
+    background-color: rgb(203, 241, 255);
+    text-align: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+#applause {
+    margin-left: -3%;
+    line-height: 100%;
+    font-size: 430px;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 77px;
+    line-height: 130%;
+}
+
+article {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+article header {
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 3%;
+    width: 776px;
+    margin-bottom: 7%;
+}
+
+article section {
+    font-size: 18px;
+    text-align: left;
+    line-height: 170%;
+    width: 776px;
+    margin: 0 auto;
+    color: #222;
+}
+
+article header h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+time {
+    float: left;
+}
+
+.author {
+    background-color: rgb(203, 241, 255);
+    float: right;
+    padding: 0 10px;
+}
+
+time, .author {
+    margin-top: 2%;
+    color: #888;
+}
+
+iframe {
+    width: 1200px;
+    margin: 0 auto;
+    height: 760px;
+    overflow-y: hidden;
+    display: inline-block;
+}
+
+article p {
+    margin-top: 20px;
+}
+
+blockquote {
+    font-style: italic;
+    color: rgb(0, 82, 147);
+    width: 600px;
+    /* text-align: center; */
+    margin: 3% auto 5% auto;
+    font-size: 40px;
+    line-height: 140%;
+}
+
+blockquote::before {
+    content: "“";
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: -25px;
+    padding-right: 10px;
+}
+
+blockquote::after {
+    content: "”";
+    font-size: 50px;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+}
+
+b {
+    font-weight: bold;
+}
+
+video {
+    margin: 20px auto;
+}
+
+.applause::after {
+    content: "👏";
+    position: relative;
+    top: -20px;
+    right: -8px;
+    font-size: 30px;
+    /* padding-right: 8px; */
+}
+
+#splosh {
+    font-style: italic;
+    margin-top: 3%;
+    color: #fff;
+    font-size: 40px;
+    background: rgb(6, 8, 9);
+    text-align: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+h2 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(0, 82, 147);
+}

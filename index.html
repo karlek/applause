@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="inc/css/reset.css">
+	<link rel="stylesheet" href="inc/css/style.css">
+	<script src='http://127.0.0.1:9001/js/socket.js'></script>
+</head>
+<body>
+    <header id="splash">
+	<span id="applause">👏</span>
+	<h1>Vad gillar våra riksdagsledamöter?</h1>
+    </header>
+    <article>
+	<header>
+	    <h2>Analys av anföranden i riksdagen och deras bemötande av riksdagsledamöter</h2>
+	    <span class="author">Av Henry Eklind</span>
+	    
+	    <time datetime=2017-10-14>14:e Oktober 2017</time>
+	</header>
+	<section>
+	    <p>Häromdagen satt jag på en föreläsning och zonade ut som en brukar göra sådär halvvägs in i höstterminen. Mina tankar fördes bort från föreläsaren som pratade om maskininlärningsalgoritmer för att klassificera olika stridsfartyg. Väldigt intressant ämne, men kl 16 på en tisdagseftermiddag kunde inget hindra min hjärna från att sidospåra likt ett växelfel hos SJ på julafton.</p>
+		
+		<p> I mitt huvud svamlade tankar runt om relationer, att jag fyller jämnt nästa vecka men inte programmerar-jämnt och en nyfikenhet kring öppna datamängder att analysera. Finns det några sådana där ute på Internet?</p>
+
+	    <p>Efter en lång intern monolog om hurvida <a href="http://skolmaten.se/d/skovde-kommun/">Skövde Kommuns samtliga skolmatsedlar</a> skulle anses vara spännande, hittade jag slutligen det som fått mig att skriva den här artikeln. Jag hittade nämligen <a href="https://data.riksdagen.se/data/anforanden/">Riksdagens öppna datamängder</a>! Jag lovar att det är mer spännande än vad det låter.</p>
+
+	    <p>Det var inte en slump att jag hamnade där på riksdagens gamla arkiv, jag har faktiskt varit här tidigare för några år sedan. Det var i gymnasiet när jag med tangentbordet som en symbolisk högaffel analyserade vilka riksdagsledamöter som hade mer än 20% frånvaro vid riksdagsvoteringar. Detta var för att protestera emot att min vän fick indraget studiebidrag för att hen skolkade just mer än den kvoten. Summa summarum var CSN inte imponerade med den ursäkten.</p>
+
+	    <h2>Förklara för mig vad vi håller på med</h2>
+	    <p>I alla fall, nu får det vara nog med tangenter för en stund. Den datamängden i riksdagens dataarkiv som jag analyserade den här gången var riksdagsledamöternas anföranden. Jag saxar definitionen från deras sida för att få in ett snyggt pull-quote här:</p>
+		<blockquote>De tal som riksdagsledamöterna håller under debatter i kammaren kallas anföranden.</blockquote>
+
+	    <p>Här finns (nästan) alla tal som hållts i riksdagen. Från nutid hela vägen tillbaka till av ett sammanträffande mitt födelseår: 1993. Det kan hållas flera hundratals anföranden på en dag i riksdagskammaren av varierande längd. Efter att jag laddat ner alla datafiler och brottats med feldöpta kolumnnamn, inkonsekventa partibeteckningar samt självklart ett gammalt hederligt teckenkodningsproblem, lyckades jag få fram dessa mytiska anföranden. Läser några av dem och inser ganska fort att politiker ändå lägger många timmar av sitt liv på retorik och prosa. I några av anförandena finns det transkiberat att kammaren utbrister i applåder och ett exempel följer nedan:</p>
+
+	    <blockquote>Nu är det dags att avsätta ordentligt med tid i grundskolan och gymnasieskolan och få in mer sex och samlevnad i kursplanerna. <b class="applause">(Applåder)</b></blockquote>
+
+	    <p>När jag läste det började jag undra: vilket parti får flest applåder och vilket får färst? Jag var inte tillräckligt kunning i nutida politiken för att våga gissa på vilket parti som skulle vara mest populärt, men jag vågade skapa en hypotes om att Sverigedemokraterna skulle få färst då jag upplevt att de är utfrysta utav resten av riksdagen. Och vad är definitionen av en applåd enligt sekreterarna? Nedan följer ett kort klipp om ett exempel på en applåd. <!-- Förlåt Håkan Bergman för att jag använder ditt tal som exempel! --> </p>
+
+	    <video src="inc/movies/applause_example.webm" controls>
+	      Din webbläsare vill inte visa videoklippet: se istället klippet på riksdagens <a href="https://www.riksdagen.se/sv/webb-tv/video/debatt-om-forslag/ratt-att-fullfolja-introduktionsprogram-i_H501UbU3?did=H501UbU3&start=237&end=258">hemsida</a>.
+	    </video>
+
+	    <h2>Äntligen lite resultat!</h2>
+	    <p>Med lite snitsiga SQLite-queries, som hade rockat sockorna av min gamla databasföreläsare (sanning med modifikation red. anm), lyckades jag få fram följande graf över hur många procent av alla anförandena per parti som efterföljs av applåder under nuvarande mandatperiod:</p>
+
+	</section>
+	<iframe src="inc/html/mandatperiod-14.html"></iframe>
+	<section>
+	    <p>Det uppenbara vi ser är att min hypotes var felaktig. Sverigedemokrater är tillsynes lika bra retoriker som Moderater och Socialdemokrater. Jag är faktiskt förvånad över hur dåligt Vänsterpartister presterade. De kom inte ens över 10%-gränsen. Är också lika förvånad över hur markant skillnad det är mellan KD, C, L och de resterande partierna. Förväntade mig att Socialdemokraterna och Moderaterna skulle ligga i toppen för att de båda blocken skulle applådera åt sitt respektive ledande parti. Undrar ifall Kristdemokraternas resonans hos de andra ledamöterna kan besvaras med tradition? Det vill säga något i stuk med att de alltid applåderat oftare åt sig själva för att vara artiga.</p>
+	    <p>Glappen i datat är när det inte skett några anföranden, dvs sommarstängningen av riksdagen och dylikt. Vi ser även att det inte fínns någon direkt koppling mellan storleken av partiet och hur många applåder partiet genererar. Däremot märker vi en klar blockskillnad.</p>
+	    </section>
+
+	<iframe src="inc/html/rise-of-sd.html"></iframe>
+	<section>
+	    <p>En intressant upptäckt är att vi kan se utfrysningen av SD som parti tinade efter de blev invalda en andra mandatperiod hösten 2014. De fick väldigt lite applåder under deras första mandatperiod, men sen nådde upptill en normal nivå. Dra lärdom av det här er alla unga revolutionärer, som ämnar att starta ett nytt parti för att göra förändring i riksdagskammaren med er rödvinspolitik. Håll ut ett mandat, sen får ni hänga med dem och dricka bärs efter voteringarna!
+
+	    <p>Av detta skulle vi kunna dra slutsatsen att ifall du behöver en konferencier på din nästa tillställning bör du välja en kristdemokrat. Detta är dock inte helt sant, för det finns vissa talare som presterar bättre än en godtycklig kristdemokrat. Reslutatet förvånade mig först, dels för att jag kunde namnet på ledamoten (jag är inte så insatt i politiken) och för att snittet var otroligt bra. Med hela <b>11%</b> procentenheter<b>(!)</b> före andraplatsen och med en tal-per-applåd-procent på <b>54.46%</b> kammar <b>Jimmie Åkesson</b> från Sverigedemokraterna hem första platsen. Han måste ha en solid fan club i kammaren.</p>
+	    <p>Det finns även några politiker som hållt över 100 anföranden och aldrig fått en applåd, vilket gjorde mig lite ledsen.</p>
+
+	    <h2>Det var inte bättre förr...</h2>
+	</section>
+	<iframe src="inc/html/since-the-beginning.html"></iframe>
+	<section>
+	    <p>Den här grafen visar hela tidsspannet från 1995 till 2017. Vi ser direkt att det applåderades väldigt mycket mindre förr om åren, vilket går ihop med min hypotes att det var tråkigare förr. Datan går egentligen tillbaka längre, men vi använder de första punkterna för att konvergera mot en sanningsenlig ratio. Notera även att eftersom det applåderades mindre förr om åren får SD en överrepresentation över hela tidsspannet. Som ni såg tidigare ligger de jämnsides de andra partierna ifall vi enbart beräknar ration över nuvarande mandatperiod.</p>
+
+	    <p>Jag valde att inte visa de gamla namnen för KD och L som separata partier för tydlighetens skull. En djupare analys skulle kunna avläsa vikten för bytet av partinamn.</p>
+
+	    <p>För att underlätta presentationen räknade jag enbart ifall ett anförande fått applåder eller inte, istället för att räkna antalet applåder per anförande.</p>
+
+	    <h2>Avslutning</h2>
+
+	    <p>Jag är skyldig att ange källa till datan som skapade graferna; <a href="https://data.riksdagen.se/anvandningsvillkor/">Källa: Sveriges riksdag.</a></p>
+
+	    <p>Avslutningsvis skulle jag vilja påpeka att typsnittet du har läst heter Sweden Sans och används av regeringskansliet bland annat. Ifall jag inte får använda det här typsnittet så får ni säga till!</p>
+
+	    <p>Åsikter, kärleksbrev, recepttips och läxhjälpsfrågor kan skickas till <a href="mailto:henrye@kth.se">henrye@kth.se</a>.</p>
+	    
+	</section>
+
+	<footer id="splosh">
+	    <span id="fin">fin.</span>
+	</footer>
+    </article>
+</body>
+</html>
+
